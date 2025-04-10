@@ -15,7 +15,9 @@
 
 Este proyecto es una actividad académica para la materia de Programación Orientada a Objetos, donde se busca aplicar conceptos de herencia, encapsulamiento y manejo de arreglos en Java, teniendo de referencia un diagrama UML de muestro proyecto
 
+![](https://raw.githubusercontent.com/MJMMiller/POO_UML/refs/heads/main/SistemaGestionPersonasRedEducativa.drawio.drawio.png)
 ---
+
 
 ## 🚀 Ejecución
 
