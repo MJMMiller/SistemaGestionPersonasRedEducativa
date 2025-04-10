@@ -1,37 +1,41 @@
 package ec.edu.ups.poo.clases;
 
-public class Administrativo extends Persona{
+import java.util.List;
 
-    private String[] cargo;
-    private String[] responsabilidad;
+public class Administrativo extends Persona {
+
+    private List<String> cargo;
+    private List<String> responsabilidad;
 
     public Administrativo() {}
 
-    public Administrativo(String cedula, String nombre, String apellido, String telefono, String correo, String[] direccion, String[] institucion, String[] cargo, String[] responsabilidad) {
-
-        super(cedula, nombre, apellido, telefono, correo, direccion, institucion);
+    public Administrativo(String cedula, String nombre, String apellido, String telefono, String correoElectronico, List<String> cargo, List<String> responsabilidad) {
+        super(cedula, nombre, apellido, telefono, correoElectronico);
         this.cargo = cargo;
         this.responsabilidad = responsabilidad;
     }
 
-    public String[] getCargo() {
+    public List<String> getCargo() {
         return cargo;
     }
 
-    public void setCargo(String[] cargo) {
+    public void setCargo(List<String> cargo) {
         this.cargo = cargo;
     }
 
-    public String[] getResponsabilidad() {
+    public List<String> getResponsabilidad() {
         return responsabilidad;
     }
 
-    public void setResponsabilidad(String[] responsabilidad) {
+    public void setResponsabilidad(List<String> responsabilidad) {
         this.responsabilidad = responsabilidad;
     }
 
     @Override
     public String toString() {
-        return "Administrativo{" + "cargo: " + String.join(", ", cargo) + " / " + "responsabilidad: " + String.join(", ", responsabilidad) + ", " + super.toString() + '}';
+        return super.toString() + ", Administrativo{" +
+                "cargo=" + cargo +
+                ", responsabilidad=" + responsabilidad +
+                '}';
     }
 }

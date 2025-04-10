@@ -1,25 +1,29 @@
 package ec.edu.ups.poo.clases;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Persona {
 
     private String cedula;
     private String nombre;
     private String apellido;
     private String telefono;
-    private String correo;
-    private String[] direccion;
-    private String[] institucion;
+    private String correoElectronico;
 
-    public Persona() {}
+    private List<Direccion> direcciones;
 
-    public Persona(String cedula, String nombre, String apellido, String telefono, String correo, String[] direccion, String[] institucion) {
+    public Persona() {
+        this.direcciones = new ArrayList<>();
+    }
+
+    public Persona(String cedula, String nombre, String apellido, String telefono, String correoElectronico) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.telefono = telefono;
-        this.correo = correo;
-        this.direccion = direccion;
-        this.institucion = institucion;
+        this.correoElectronico = correoElectronico;
+        this.direcciones = new ArrayList<>();
     }
 
     public String getCedula() {
@@ -54,32 +58,31 @@ public class Persona {
         this.telefono = telefono;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getCorreoElectronico() {
+        return correoElectronico;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
     }
 
-    public String[] getDireccion() {
-        return direccion;
+    public void addDireccion(Direccion direccion) {
+        this.direcciones.add(direccion);
     }
 
-    public void setDireccion(String[] direccion) {
-        this.direccion = direccion;
-    }
-
-    public String[] getInstitucion() {
-        return institucion;
-    }
-
-    public void setInstitucion(String[] institucion) {
-        this.institucion = institucion;
+    public List<Direccion> getDirecciones() {
+        return direcciones;
     }
 
     @Override
     public String toString() {
-        return "Persona{" + "cedula: " + cedula +  " / "  + "nombre: " + nombre +  " / "  + "apellido: " + apellido +  " / "  + "telefono: " + telefono +  " / "  + "correo: " + correo +  " / "  + "direccion: " + String.join(", ", direccion) + "institucion: " + String.join(", ", institucion) + '}';
+        return "Persona{" +
+                "cedula='" + cedula + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", telefono='" + telefono + '\'' +
+                ", correoElectronico='" + correoElectronico + '\'' +
+                ", direcciones=" + direcciones +
+                '}';
     }
 }
